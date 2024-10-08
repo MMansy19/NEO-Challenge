@@ -2,6 +2,13 @@
 
 This project is a web application that visualizes Near-Earth Objects (NEOs) from NASA's NeoWs (Near Earth Object Web Service) API. It allows users to filter NEO data, visualize the diameters of objects in a **bar chart**, switch to a **table view**, and **download the data as CSV**.
 
+## 🌐 Live Demo
+You can view a live demo of the application [here](https://neo-mansy.vercel.app/).
+
+## 📄 Test PDF
+You can find the assessment/test document used for this application [here](./React_Test_Requeue.pdf).
+
+
 ## 🚀 Features
 
 - **NEO Data Fetching**: Fetches data from NASA's NeoWs API.
@@ -26,6 +33,8 @@ This project is a web application that visualizes Near-Earth Objects (NEOs) from
 ### 3. **Table View**
 
 ![NEO Table View](./3.png)
+
+
 
 ## 🛠️ Tech Stack
 
