@@ -23,8 +23,8 @@ export const MainView: React.FC = () => {
   if (error) return <p className="text-center text-red-600">{error}</p>;
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
+    <div className="max-w-5xl mx-auto p-8 bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg rounded-xl">
+      <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">
         NEO Data Visualization
       </h1>
 
@@ -33,7 +33,7 @@ export const MainView: React.FC = () => {
         <input
           type="text"
           placeholder="Search NEO by name"
-          className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -51,16 +51,20 @@ export const MainView: React.FC = () => {
       {/* View Switcher */}
       <div className="flex justify-between items-center mb-6">
         <button
-          className={`px-4 py-2 rounded-lg ${
-            view === "chart" ? "bg-indigo-500 text-white" : "bg-gray-200"
+          className={`px-6 py-3 rounded-lg font-semibold transition duration-200 ${
+            view === "chart"
+              ? "bg-blue-500 text-white hover:bg-blue-600"
+              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
           }`}
           onClick={() => setView("chart")}
         >
           Chart View
         </button>
         <button
-          className={`px-4 py-2 rounded-lg ${
-            view === "table" ? "bg-indigo-500 text-white" : "bg-gray-200"
+          className={`px-6 py-3 rounded-lg font-semibold transition duration-200 ${
+            view === "table"
+              ? "bg-blue-500 text-white hover:bg-blue-600"
+              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
           }`}
           onClick={() => setView("table")}
         >
