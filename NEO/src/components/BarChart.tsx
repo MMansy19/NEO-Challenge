@@ -17,18 +17,21 @@ export const BarChart: React.FC<BarChartProps> = ({ data }) => {
 
   const options = {
     title: "NEO Diameter Visualization",
-    chartArea: { width: "50%" },
+    chartArea: { width: "60%" },
     hAxis: { title: "Diameter (km)", minValue: 0 },
     vAxis: { title: "NEO" },
   };
 
   return (
-    <Chart
-      chartType="BarChart"
-      data={chartData}
-      options={options}
-      width="100%"
-      height="400px"
-    />
+    <div className="bg-gray-100 p-4 rounded-lg shadow">
+      <Chart
+        chartType="BarChart"
+        data={chartData}
+        options={options}
+        width="100%"
+        height="400px"
+        className="rounded-lg"
+      />
+    </div>
   );
 };
