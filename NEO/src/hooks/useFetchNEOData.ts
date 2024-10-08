@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchNEOData } from "../services/neoService";
-interface CloseApproachData {
-  orbiting_body: string;
-}
+import { NeoObject } from "../types/types";
 
-interface NeoObject {
-  close_approach_data: CloseApproachData[];
-}
 export const useFetchNEOData = () => {
   const [data, setData] = useState<NeoObject[]>([]);
   const [loading, setLoading] = useState(true);

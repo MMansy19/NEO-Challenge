@@ -1,8 +1,5 @@
 import React from "react";
-
-interface CSVDownloadButtonProps {
-  data: any[];
-}
+import { CSVDownloadButtonProps } from "../types/types";
 
 export const CSVDownloadButton: React.FC<CSVDownloadButtonProps> = ({
   data,
@@ -32,7 +29,7 @@ export const CSVDownloadButton: React.FC<CSVDownloadButtonProps> = ({
 
   return (
     <button
-      className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+      className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 shadow-md transition duration-300 ease-in-out"
       onClick={downloadCSV}
     >
       Download CSV

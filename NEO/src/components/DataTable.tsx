@@ -1,8 +1,5 @@
 import React from "react";
-
-interface DataTableProps {
-  data: any[];
-}
+import { DataTableProps } from "../types/types";
 
 export const DataTable: React.FC<DataTableProps> = ({ data }) => {
   return (
@@ -20,7 +17,9 @@ export const DataTable: React.FC<DataTableProps> = ({ data }) => {
           {data.map((neo, index) => (
             <tr
               key={index}
-              className="border-t border-gray-200 text-gray-700 text-sm"
+              className={`border-t border-gray-200 text-gray-700 text-sm ${
+                index % 2 === 0 ? "bg-gray-50" : "bg-white"
+              }`}
             >
               <td className="py-3 px-4">{neo.name}</td>
               <td className="py-3 px-4">

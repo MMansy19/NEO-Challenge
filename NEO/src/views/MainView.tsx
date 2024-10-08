@@ -3,7 +3,9 @@ import { BarChart } from "../components/BarChart";
 import { FilterDropdown } from "../components/FilterDropdown";
 import { DataTable } from "../components/DataTable";
 import { useFilteredNEOData } from "../hooks/useFilteredNEOData";
-import { CSVDownloadButton } from "../components/CSVDownloadButton";
+import { LoadingSpinner } from "../components/LoadingSpinner";
+import { ViewSwitcher } from "../components/ViewSwitcher.tsx";
+import { SearchBar } from "../components/SearchBar";
 
 export const MainView: React.FC = () => {
   const {
@@ -19,7 +21,7 @@ export const MainView: React.FC = () => {
 
   const [view, setView] = useState<"chart" | "table">("chart");
 
-  if (loading) return <p className="text-center text-gray-600">Loading...</p>;
+  if (loading) return <LoadingSpinner />;
   if (error) return <p className="text-center text-red-600">{error}</p>;
 
   return (
@@ -28,52 +30,15 @@ export const MainView: React.FC = () => {
         NEO Data Visualization
       </h1>
 
-      {/* Search bar */}
-      <div className="mb-6">
-        <input
-          type="text"
-          placeholder="Search NEO by name"
-          className="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <FilterDropdown
+        options={orbitalBodies}
+        selected={selectedOrbitalBody}
+        onChange={setSelectedOrbitalBody}
+      />
 
-      {/* Filter Dropdown */}
-      <div className="mb-6">
-        <FilterDropdown
-          options={orbitalBodies}
-          selected={selectedOrbitalBody}
-          onChange={setSelectedOrbitalBody}
-        />
-      </div>
+      <ViewSwitcher view={view} setView={setView} filteredData={filteredData} />
 
-      {/* View Switcher */}
-      <div className="flex justify-between items-center mb-6">
-        <button
-          className={`px-6 py-3 rounded-lg font-semibold transition duration-200 ${
-            view === "chart"
-              ? "bg-blue-500 text-white hover:bg-blue-600"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }`}
-          onClick={() => setView("chart")}
-        >
-          Chart View
-        </button>
-        <button
-          className={`px-6 py-3 rounded-lg font-semibold transition duration-200 ${
-            view === "table"
-              ? "bg-blue-500 text-white hover:bg-blue-600"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }`}
-          onClick={() => setView("table")}
-        >
-          Table View
-        </button>
-        {view === "table" && <CSVDownloadButton data={filteredData} />}
-      </div>
-
-      {/* Conditional rendering based on view */}
       {view === "chart" ? (
         <BarChart data={filteredData} />
       ) : (

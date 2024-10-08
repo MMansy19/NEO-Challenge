@@ -1,9 +1,6 @@
 import React from "react";
 import { Chart } from "react-google-charts";
-
-interface BarChartProps {
-  data: any[];
-}
+import { BarChartProps } from "../types/types";
 
 export const BarChart: React.FC<BarChartProps> = ({ data }) => {
   const chartData = [
