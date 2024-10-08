@@ -1,4 +1,4 @@
-const API_KEY = "DEMO_KEY";
+const API_KEY = "XEFzeUpfYeNVFAOu4BTXN6bwO5HhoDJPyoPp9CEz";
 const NEO_API_URL = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=${API_KEY}`;
 
 export const fetchNEOData = async () => {
