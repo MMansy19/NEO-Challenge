@@ -1,3 +1,4 @@
+// src/components/FilterDropdown.tsx
 import React from "react";
 import { MenuItem, Select, FormControl, InputLabel } from "@mui/material";
 
@@ -15,7 +16,10 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
   return (
     <FormControl fullWidth>
       <InputLabel>Orbital Body</InputLabel>
-      <Select value={selected} onChange={(e) => onChange(e.target.value)}>
+      <Select
+        value={selected}
+        onChange={(e) => onChange(e.target.value as string)}
+      >
         {options.map((option) => (
           <MenuItem key={option} value={option}>
             {option}
