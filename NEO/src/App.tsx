@@ -1,11 +1,13 @@
 import React from "react";
 import { MainView } from "./views/MainView";
-import "./index.css"; // Import Tailwind CSS styles
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const App: React.FC = () => {
   return (
     <div className="container mx-auto">
-      <MainView />
+      <ErrorBoundary>
+        <MainView />
+      </ErrorBoundary>
     </div>
   );
 };

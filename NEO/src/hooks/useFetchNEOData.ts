@@ -9,6 +9,7 @@ export const useFetchNEOData = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+      setError(null);
       try {
         const neo = await fetchNEOData();
         setData(neo);
