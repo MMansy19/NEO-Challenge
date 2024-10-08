@@ -22,10 +22,15 @@ export const MainView: React.FC = () => {
   const [view, setView] = useState<"chart" | "table">("chart");
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <p className="text-center text-red-600">{error}</p>;
+  if (error)
+    return (
+      <p className="flex justify-center items-center h-screen italic text-center text-red-600">
+        {error}
+      </p>
+    );
 
   return (
-    <div className="max-w-5xl mx-auto p-8 bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg rounded-xl">
+    <div className="max-w-5xl flex flex-col gap-2 mx-auto p-8 bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg rounded-xl">
       <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">
         NEO Data Visualization
       </h1>
