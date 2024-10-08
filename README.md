@@ -92,14 +92,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions, suggestions, or contributions, feel free to contact me via GitHub or LinkedIn!
 
----
-
-### Notes:
-
-1. **Screenshots**: You need to generate actual screenshots for the app and save them in a `/screenshots` folder in the project directory. The images should be linked properly within the README (use the correct path based on your project structure).
-
-2. **NASA API Key**: Make sure to mention the process for obtaining a NASA API key from the [NASA API portal](https://api.nasa.gov/).
-
-3. **Author Information**: Replace the placeholder values (`your-username`, `your-github-handle`, `your-linkedin-profile`) with your actual information.
-
-Let me know if you want help with any specific part!
