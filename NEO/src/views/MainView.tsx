@@ -5,15 +5,25 @@ import { FilterDropdown } from "../components/FilterDropdown";
 
 export const MainView: React.FC = () => {
   const { data, loading, error } = useFetchNEOData();
-  const [selectedOrbitalBody, setSelectedOrbitalBody] = useState("");
+  const [selectedOrbitalBody, setSelectedOrbitalBody] = useState<string>("");
 
-  const filteredData = selectedOrbitalBody
-    ? data.filter((neo) => neo.orbiting_body === selectedOrbitalBody)
-    : data;
-
+  // Extract all unique orbital bodies
   const orbitalBodies = Array.from(
-    new Set(data.map((neo) => neo.orbiting_body))
+    new Set(
+      data.flatMap((neo) =>
+        neo.close_approach_data.map((approach: any) => approach.orbiting_body)
+      )
+    )
   );
+
+  // Filter NEOs based on the selected orbital body
+  const filteredData = selectedOrbitalBody
+    ? data.filter((neo) =>
+        neo.close_approach_data.some(
+          (approach: any) => approach.orbiting_body === selectedOrbitalBody
+        )
+      )
+    : data;
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
