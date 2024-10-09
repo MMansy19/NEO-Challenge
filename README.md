@@ -50,7 +50,7 @@ You can find the assessment/test document used for this application [here](./Rea
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/neo-data-visualization.git
+   git clone https://github.com/MMansy19/NEO-Data-Visualization.git
    cd neo-data-visualization
    ```
 
@@ -60,13 +60,6 @@ You can find the assessment/test document used for this application [here](./Rea
    npm install
    ```
 
-3. Set up the `.env.local` file:
-
-   Create an `.env.local` file in the root directory and add your NASA API key:
-
-   ```bash
-   VITE_NEO_API_URL=https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=YOUR_NASA_API_KEY
-   ```
 
 4. Start the development server:
 
