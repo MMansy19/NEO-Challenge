@@ -50,8 +50,8 @@ You can find the assessment/test document used for this application [here](./Rea
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/MMansy19/NEO-Data-Visualization.git
-   cd neo-data-visualization
+   git clone https://github.com/MMansy19/NEO-Challenge.git
+   cd NEO
    ```
 
 2. Install dependencies:
