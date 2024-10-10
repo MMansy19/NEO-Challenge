@@ -1,7 +1,15 @@
+export type SearchCompProps = {
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  orbitalBodies: string[];
+  selectedOrbitalBody: string;
+  setSelectedOrbitalBody: React.Dispatch<React.SetStateAction<string>>;
+};
+
 export type ButtonComponentProps = {
   text: string;
   onClick: () => void;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "download";
 };
 
 export type CloseApproachData = {

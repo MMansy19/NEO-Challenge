@@ -6,7 +6,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   setSearchTerm,
 }) => {
   return (
-    <div className="relative mb-6">
+    <div className="relative w-full md:w-1/2">
       <input
         type="text"
         placeholder="Search NEO by name"
@@ -16,7 +16,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute left-3 top-3 w-6 h-6 text-gray-400"
+        className="absolute left-3 top-[19px] w-6 h-6 text-gray-400"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"

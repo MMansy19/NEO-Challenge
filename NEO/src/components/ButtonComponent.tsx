@@ -7,10 +7,11 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
   variant,
 }) => {
   const baseStyle =
-    "px-6 py-3 rounded-lg font-semibold transition duration-200 ease-in-out";
+    "md:text-base text-sm px-3 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition duration-200 ease-in-out";
   const variants = {
     primary: "bg-blue-500 text-white hover:bg-blue-600",
     secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
+    download: "bg-green-500 text-white hover:bg-green-600",
   };
 
   return (
