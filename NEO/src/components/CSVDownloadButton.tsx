@@ -31,7 +31,7 @@ export const CSVDownloadButton: React.FC<CSVDownloadButtonProps> = ({
   return (
     <ButtonComponent
       text="Download CSV"
-      onClick={() => downloadCSV}
+      onClick={() => downloadCSV()}
       variant="download"
     />
   );
