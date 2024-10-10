@@ -1,5 +1,6 @@
 import React from "react";
 import { CSVDownloadButtonProps } from "../types/types";
+import { ButtonComponent } from "./ButtonComponent";
 
 export const CSVDownloadButton: React.FC<CSVDownloadButtonProps> = ({
   data,
@@ -28,11 +29,10 @@ export const CSVDownloadButton: React.FC<CSVDownloadButtonProps> = ({
   };
 
   return (
-    <button
-      className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 shadow-md transition duration-300 ease-in-out"
-      onClick={downloadCSV}
-    >
-      Download CSV
-    </button>
+    <ButtonComponent
+      text="Download CSV"
+      onClick={() => downloadCSV}
+      variant="download"
+    />
   );
 };

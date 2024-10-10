@@ -7,9 +7,9 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
   onChange,
 }) => {
   return (
-    <div className="relative w-full">
+    <div className="relative md:w-1/2 w-full">
       <select
-        className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-3 pr-8 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-4 pr-8 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         value={selected}
         onChange={(e) => onChange(e.target.value)}
       >
